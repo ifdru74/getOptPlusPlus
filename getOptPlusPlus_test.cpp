@@ -281,19 +281,5 @@ int main(int argc, char* argv[])
     if (argc == 1) {
         return performAllTests();
     }
-    //return testSet(argc, argv, true);
-    std::istringstream iss(argv[1]);
-    int i;
-    iss.exceptions(istream::failbit | istream::badbit);
-    try
-    {
-        iss >> std::hex;
-        iss >> i;
-        std::cout << i << std::endl;
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    return EXIT_SUCCESS;
+    return testSet(argc, argv, true);
 }
